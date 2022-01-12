@@ -1,5 +1,5 @@
 <template>
-  <div id="todo"></div>
+  <div id="todo" class="task"></div>
 </template>
 
 <script>
