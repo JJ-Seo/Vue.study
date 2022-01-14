@@ -6,8 +6,8 @@
         <input type="text" class="form-control mb-4" v-model="userInput" @keyup.enter="addNewTodo">
 
         <div class="list-group">
-          <button class="list-group-item text-left" v-for="todo in todoList" :key="todo" @click="toggleTodoState">
-            {{ todo }}
+          <button class="list-group-item text-left" v-for="todo in todoList.filter(todo => todo.state === 'active')" :key="todo" @click="toggleTodoState(todo)">
+            {{ todo.label }}
           </button>
         </div>
       </div>
