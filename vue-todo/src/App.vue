@@ -28,7 +28,10 @@ export default {
   },
   methods:{
     addNewTodo(){
-      this.todoList.push(this.userInput);
+      this.todoList.push({
+        label: this.userInput,
+        state: 'active'
+      });
       this.userInput = '';
     }
   },
