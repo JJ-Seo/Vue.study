@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div class="container">
-      <h1 class="text-center">Todo App</h1>
-      <input type="text" class="form-control" v-model="userInput">
-
+      <div class="com-md-6 offser-md-3">
+        <h1 class="text-center mb-4">Todo App</h1>
+        <input type="text" class="form-control" v-model="userInput">
+      </div>
     </div>
   </div>
 </template>
