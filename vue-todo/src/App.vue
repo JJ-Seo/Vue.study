@@ -6,7 +6,7 @@
         <input type="text" class="form-control mb-4" v-model="userInput" @keyup.enter="addNewTodo">
 
         <div class="list-group">
-          <button class="list-group-item text-left" v-for="todo in activeTodoList()" :key="todo" @click="toggleTodoState(todo)">
+          <button class="list-group-item text-left" v-for="todo in activeTodoList" :key="todo" @click="toggleTodoState(todo)">
             {{ todo.label }}
           </button>
         </div>
@@ -26,10 +26,15 @@ export default {
       todoList:[]
     };
   },
-  methods:{
+
+  computed: {
     activeTodoList(){
       return this.todoList.filter(todo => todo.state === 'active')
-    },
+    }
+  },
+
+  methods:{
+    
 
     addNewTodo(){
       this.todoList.push({
