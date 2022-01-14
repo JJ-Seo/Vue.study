@@ -12,9 +12,9 @@
         </div>
 
         <div class="text-right">
-          <button type="button" class="btn btn-sm">To do List</button>
-          <button type="button" class="btn btn-sm">Done</button>
-          <button type="button" class="btn btn-sm">All</button>
+          <button type="button" class="btn btn-sm" @click="changeCurrentState('active')">To do List</button>
+          <button type="button" class="btn btn-sm" @click="changeCurrentState('done')">Done</button>
+          <button type="button" class="btn btn-sm" @click="changeCurrentState('all')">All</button>
         </div>
 
       </div>
@@ -37,13 +37,15 @@ export default {
 
   computed: {
     activeTodoList(){
-      return this.todoList.filter(todo => todo.state === 'active')
+      return this.todoList.filter(todo => this.currentState ==='all' || todo.state === this.currentState);
     }
+    
   },
 
   methods:{
-    
-
+    changeCurrentState(state){
+      this.currentState = state;
+    },
     addNewTodo(){
       this.todoList.push({
         label: this.userInput,
