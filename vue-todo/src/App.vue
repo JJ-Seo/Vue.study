@@ -6,7 +6,7 @@
         <input type="text" class="form-control mb-4" v-model="userInput" @keyup.enter="addNewTodo">
 
         <div class="list-group">
-          <button class="list-group-item text-left" v-for="todo in todoList" :key="todo">
+          <button class="list-group-item text-left" v-for="todo in todoList" :key="todo" @click="toggleTodoState">
             {{ todo }}
           </button>
         </div>
@@ -33,6 +33,9 @@ export default {
         state: 'active'
       });
       this.userInput = '';
+    },
+    toggleTodoState(todo){
+      todo.state = todo.state === 'active' ? 'done' : 'active';
     }
   },
   components: {
