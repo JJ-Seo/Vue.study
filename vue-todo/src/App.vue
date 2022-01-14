@@ -6,9 +6,13 @@
         <input type="text" class="form-control mb-4" v-model="userInput" @keyup.enter="addNewTodo">
 
         <div class="list-group mb-4">
-          <button class="list-group-item text-left" v-for="todo in activeTodoList" :key="todo" @click="toggleTodoState(todo)">
-            {{ todo.label }}
-          </button>
+          <div v-for="todo in activeTodoList" :key="todo">
+            <todo 
+              :label="todo.label"
+              @componentClick="toggleTodoState(todo)"
+              
+            />
+          </div>
         </div>
 
         <div class="text-right">
@@ -23,6 +27,7 @@
 </template>
 
 <script>
+  import Todo from './components/Todo.vue';
 
 export default {
   name: 'App',
@@ -58,7 +63,7 @@ export default {
     }
   },
   components: {
-    
+    Todo
   }
 }
 </script>
