@@ -3,7 +3,13 @@
     <div class="container">
       <div class="com-md-6 offser-md-3">
         <h1 class="text-center mb-4">Todo App</h1>
-        <input type="text" class="form-control" v-model="userInput" @keyup.enter="addNewTodo">
+        <input type="text" class="form-control mb-4" v-model="userInput" @keyup.enter="addNewTodo">
+
+        <div class="list-group">
+          <button class="list-group-item text-left" v-for="todo in todoList" :key="todo">
+            {{ todo }}
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -41,4 +47,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.text-left{text-align: left;}
 </style>
