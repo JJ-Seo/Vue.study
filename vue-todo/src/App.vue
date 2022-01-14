@@ -3,7 +3,7 @@
     <div class="container">
       <div class="com-md-6 offser-md-3">
         <h1 class="text-center mb-4">Todo App</h1>
-        <input type="text" class="form-control" v-model="userInput">
+        <input type="text" class="form-control" v-model="userInput" @keyup.enter="addNewTodo">
       </div>
     </div>
   </div>
@@ -16,8 +16,15 @@ export default {
 
   data() {
     return{
-      userInput:''
+      userInput:'',
+      todoList:[]
     };
+  },
+  methods:{
+    addNewTodo(){
+      this.todoList.push(this.userInput);
+      this.userInput = '';
+    }
   },
   components: {
     
