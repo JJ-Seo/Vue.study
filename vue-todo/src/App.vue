@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <div class="container">
-      
+      <h1 class="text-center">Todo App</h1>
+      <input type="text" class="form-control" v-model="userInput">
 
     </div>
   </div>
@@ -11,8 +12,14 @@
 
 export default {
   name: 'App',
+
+  data() {
+    return{
+      userInput:''
+    };
+  },
   components: {
-    HelloWorld
+    
   }
 }
 </script>
