@@ -30,7 +30,8 @@ export default {
   data() {
     return{
       userInput:'',
-      todoList:[]
+      todoList:[],
+      currentState: 'active'      
     };
   },
 
